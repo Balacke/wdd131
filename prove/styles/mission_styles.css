@@ -38,6 +38,8 @@ hr {
 h3 {
     font-style: italic;
     font-size: 1em;
+    justify-self: left !important;
+    text-align: left !important;
 }
 
 #list {
@@ -46,6 +48,8 @@ h3 {
 
 li {
     margin: 1em;
+    text-align: left !important;
+    text-justify: left !important;
 }
 
 #image {
