@@ -7,23 +7,34 @@
     <meta name="author" content="Blake Kenworthy">
     <meta name="description" content="Re-create the University Mission Statement using HTML and CSS.">
     <link href="./styles/mission_styles.css" rel="stylesheet">
+    <script src="./javascript/mission_statement.js" defer></script>
 </head>
 <body>
+    <select>
+    
+            <option>Choose Mode</option>
+    
+            <option value="dark">Dark</option>
+    
+            <option value="light">Light</option>
+    
+    </select>
     <div id="content">
         <h1>MISSION STATEMENT</h1>
         <h2>BRIGHAM YOUNG UNIVERSITY-IDAHO</h2>
         <hr>
-        <p id="text">Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of Latter-day
+        <hidden class = "text">If you change the background color you won't be able to see me!</hidden>
+        <p class ="text">Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of Latter-day
         Saints. Its mission is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their
         communities.</p>
-        <h3>The univeristy does this by:</h3>
+        <h3 class="text">The univeristy does this by:</h3>
         <ol id="list">
-            <li>Building testimonies of the restored gospel of Jesus Christ and fostering its principles in a wholesome academic,
+            <li class="text">Building testimonies of the restored gospel of Jesus Christ and fostering its principles in a wholesome academic,
             cultural, and social environment.</li>
-            <li>Providing a high-quality education that prepares students of diverse interests and abilities for lifelong learning and
+            <li class="text">Providing a high-quality education that prepares students of diverse interests and abilities for lifelong learning and
             employment.</li>
-            <li>Serving as many students as possible within resource constraints.</li>
-            <li>Delivering education that is affordable for students and the Church.</li>
+            <li class="text">Serving as many students as possible within resource constraints.</li>
+            <li class="text">Delivering education that is affordable for students and the Church.</li>
         </ol>
         <img id="image" src="./images/byui-logo-blue.webp">
     </div>
