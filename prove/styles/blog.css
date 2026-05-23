@@ -41,6 +41,10 @@ nav a:hover {
     font-size: 1.2em;
 }
 
+nav a:focus{
+    outline: 2px solid #2D2424;
+    outline-offset: 2px;
+}
 .optional {
     display: block;
     margin-top: 3vh;
