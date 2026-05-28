@@ -1,0 +1,15 @@
+body {
+    background-color: #33DDFF;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 4em;
+    border: 10vw;
+    text-justify: center;
+    text-align: center;
+    text-shadow: 3px 0 0 #FF3F2F,0 3px 0 #FF3F2F,
+    -3px 0 0 #FF3F2F, 0 -3px 0 #FF3F2F, 0 0 2px #FF3F2F, 0 0 4px #FF3F2F;
+
+}
