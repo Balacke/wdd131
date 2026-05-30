@@ -122,10 +122,17 @@ footer p {
         text-align: right;
     }
 
-    h2 {
+    .book h2 {
         color: #FE3352;
         text-align: center;
         padding-left: 1rem;
+        margin-left: 0;
+        
+    }
+    article h2 {
+        width: 100%;
+        text-justify: center;
+        margin-left: 22.5rem;
     }
 
     .book {
