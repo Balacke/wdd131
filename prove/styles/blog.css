@@ -45,6 +45,30 @@ nav a:focus{
     outline: 2px solid #2D2424;
     outline-offset: 2px;
 }
+
+menu {
+    justify-self: center;
+    align-self: center;
+    
+}
+
+#book-select {
+    text-justify: center;
+    text-align: center;   
+    color: #CC2131; 
+}
+
+/*Apparently you can't style option elements on most browsers so this is the easiest solution*/
+#book-select:hover {
+    background-color: #110032;
+        text-shadow:
+            0 0 2px #FFD6E0,
+            0 0 4px#FFD6E0,
+            0 0 6px #FFD6E0,
+            0 0 8px #FFD6E0;
+        font-size: 1.2em;
+}
+
 .optional {
     display: block;
     margin-top: 3vh;
@@ -82,10 +106,11 @@ footer p {
 }
 
 @media screen and (min-width:700px) {
-    main {
+    article {
         display: grid;
         grid-template-columns: 2fr 3fr;
         grid-template-rows: 1fr;
+        width: 1000px;
     }
 
     .about_book {
@@ -99,27 +124,29 @@ footer p {
 
     h2 {
         color: #FE3352;
-        margin-right: 10vw;
+        text-align: center;
+        padding-left: 1rem;
     }
 
     .book {
         justify-items: center;
+        justify-content: center;
         align-content: center;
         display: block;
+        margin: 0 auto;
         grid-row: 1;
         grid-column: 2;
     }
 
     #book_image {
         display: block;
-        margin-right: 10vw;
+
         width: 300px;
 
     }
 
     .book p {
-        margin-left: 1vw;
-        margin-right: 6vw;
+
     }
 
 }

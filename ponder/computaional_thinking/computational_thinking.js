@@ -1,7 +1,7 @@
 let selectElem = document.querySelector('#theme-select');
 let pageContent = document.querySelector('body');
 
-selectElem.addEventListener('change', changeTheme);
+selectElem.addEventListener('change', changeTheme); 
 
 function changeTheme() {
     let current = selectElem.value;
