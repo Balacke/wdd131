@@ -21,7 +21,7 @@ const character = {
     },
 
     levelUp: function() {
-        this.level = this.level++;
+        this.level = this.level +=1;
         this.health = this.health *=2
 
         console.log(`${this.name} leveled up! New level is ${this.level}! New health is ${this.health}!`);
