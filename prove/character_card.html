@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Card </title>
+    <meta name="author" content="Blake">
+    <meta name="description" content="interactive character card">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Character Card ">
+    <meta property="og:description" content="Interactive character card with stats and actions">
+    <meta property="og:url" content="https://balacke.github.io/wdd131/prove/charactercard.html">
+    <meta property="og:image" content="https://balacke.github.io/wdd131/prove/images/preview.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Character Card ">
+    <meta name="twitter:description" content="Interactive character card with stats and actions">
+    <meta name="twitter:image" content="https://balacke.github.io/wdd131/prove/images/preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="./styles/character_card.css">
+</head>
+
+<body>
+    <div class="card">
+        <img src="./images/snortleblat.webp" alt="Character Image" class="image">
+        <div class="name" id="name"></div>
+
+        <div class="stats">
+            <p><strong>Class:</strong> <span id="class"></span></p>
+            <p><strong>Level:</strong> <span id="level"></span></p>
+            <p><strong>Health:</strong> <span id="health"></span></p>
+        </div>
+
+        <div class="buttons">
+            <button id="attack" aria-label="Attacked the character">Attacked</button>
+            <button id="levelUp" aria-label="Level up the character">Level Up</button>
+        </div>
+    </div>
+
+    <script src="./javascript/character_card.js" defer></script>
+</body>
+
+</html>
