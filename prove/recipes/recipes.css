@@ -46,18 +46,20 @@ h1 {
         font-size: 1rem;
         border: 1px solid #ccc;
         border-radius: 4px;
-        width: 40vw;
+        width: 52vw;
+        height: 5vh;
+
 }
 
 .search-icon {
-    width: 18px;
-    height: 18px;
+    width: 4vw;
+    height: 4vh;
 }
 
 .search-icon-btn {
     position: relative;
-    top: -3.1vh;
-    right: -35.5vw;
+    top: -4.45vh;
+    right: -45vw;
     background: none;
     color: #555;
     cursor: pointer;
@@ -121,9 +123,16 @@ footer {
 @media screen and (min-width: 800px) {
     .search input {
         width: 80vw;
+        height: 5vh;
     }
     .search-icon-btn {
         right: -75vw;
+        top: -4.6vh;
+        width: 10vw;
+        justify-content: left ;
+    }
+    .search-icon {
+        height: 3em;
     }
     
     .recipe {
