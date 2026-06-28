@@ -11,7 +11,8 @@
 }
 
 .big {
-    width: 50vw;
+    width: 55vw;
+    height:55vh;
     margin-bottom: 5px;
 }
 
@@ -33,22 +34,22 @@ h1 {
     align-self: center;
     font-family: 'Amatic SC', sans-serif;
     font-size: 3em;
-} 
+}
 
 .search {
-    justify-self: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 .search input {
-        padding: 0.5rem 2.5rem 0.5rem 1rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 52vw;
-        height: 5vh;
-
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 52vw;
+    height: 5vh;
 }
 
 .search-icon {
@@ -57,30 +58,26 @@ h1 {
 }
 
 .search-icon-btn {
-    position: relative;
-    top: -4.45vh;
-    right: -45vw;
     background: none;
-    color: #555;
+    border-left: 2px solid #555;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-left: 2px, solid, #555555;
-    border-bottom: None;
-    border-top: None;
-    border-right: None;
 }
 
 .recipe {
-    display:flexbox;
-    justify-self: center;
-    border: 4px, solid, #111111;
+    display: flex;
+    border: 4px solid #111;
     border-radius: 5%;
     height: 55vh;
     padding: 10px;
+    gap: 20px;
 }
- 
+
 h2 {
     font-family: 'Amatic SC', sans-serif;
     font-size: 2em;
@@ -89,16 +86,19 @@ h2 {
 }
 
 .recipe_description {
-    display: flexbox;
-    justify-self: left;    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .recipe_type {
     font-size: 1.3em;
-    border: 2px, solid, #AAAAAA;
-    background-color: #EEEEEE;
-    color: #000000;
+    border: 2px solid #AAA;
+    background-color: #EEE;
+    color: #000;
     font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .rating {
@@ -106,66 +106,92 @@ h2 {
 }
 
 .larger_device {
-    display: None;
+    display: none;
 }
 
 .social {
-    display: flexbox;
-    justify-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin: 20px;
 }
 
 footer {
-    justify-self: center;
+    text-align: center;
+    margin-top: 20px;
 }
 
-
 @media screen and (min-width: 800px) {
+
+    /* SEARCH BAR */
+    .search {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
     .search input {
-        width: 80vw;
+        width: 60vw;
         height: 5vh;
     }
+
     .search-icon-btn {
-        right: -75vw;
-        top: -4.6vh;
-        width: 10vw;
-        justify-content: left ;
-    }
-    .search-icon {
-        height: 3em;
-    }
-    
-    .recipe {
-        align-items: center;
+        background: none;
+        border-left: 2px solid #555;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        cursor: pointer;
         display: flex;
-        gap: 20px;
-        height: 40vh;
-        width: 80vw;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .recipe_description{
-        display: block;
-    }
-    .big {
-        display: flex;
-        max-height:40vh;
+    .search-icon {
+        height: 2.5em;
         width: auto;
     }
 
-    .larger_device {
-        display: flex; 
+    /* RECIPE CARD */
+    .recipe {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        width: 80vw;
+        margin: 0 auto;
+        padding: 20px;
     }
+
+    .recipe_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .big {
+        max-height: 40vh;
+        width: auto;
+        display: block;
+    }
+
+    .larger_device {
+        display: block;
+    }
+
+    /* SOCIAL ICONS */
     .social {
         display: flex;
-        justify-self: right;
-        position: relative;
-        left: -5vw;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
     }
+
+    /* FOOTER */
     footer {
-        display: flex;
-        justify-self: left;
-        position: relative;
-        top: -5.5vh;
-        right: -8vw;
+        text-align: center;
+        margin-top: 20px;
     }
 }
