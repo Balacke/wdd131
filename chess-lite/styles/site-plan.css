@@ -6,7 +6,7 @@ Fonts are separated by a | */
 
 :root {
     --primary-color: #16191B; /* Dark charcoal background base */
-    --secondary-color: #222629; /* Slate gray secondary base */
+    --secondary-color: #92ECBA; 
     --accent1-color: #4E6172; /* Muted blue-gray accent */
 
     /*  Chessboard Squares */
@@ -14,25 +14,24 @@ Fonts are separated by a | */
         --dark-squares: #3A3D40;
 
         /*  Chess Pieces */
-        --white-pieces: #FFFFFF;
-        --black-pieces: #1A1C1E;
+        --piece-outline: #dd2221;
 
         /*  Gameplay Indicators */
         --selected-piece: #5C758A;
-        --possible-moves: #70889B;
+        --possible-moves: #cdaf04;
 
     /* Typography Selection */
     --heading-font: "IM Fell French Canon";
     --paragraph-font: "Montserrat", sans-serif;
     --main-text: #F5F6F7;
-    --second-text: #8A949E;
+    --second-text: #9A747E;
 
     /* Interface Role Mapping */
     --headline-color-on-white: var(--primary-color);
     --headline-color-on-color: var(--accent2-color);
 
     --paragraph-color-on-white: #1A1C1E;
-    --paragraph-color-on-color: #8A949E;
+    --paragraph-color-on-color: var(--second-text);
     /* second-text color for sub-labels */
     --paragraph-background-color: var(--secondary-color);
 
@@ -122,8 +121,32 @@ p {
     background-color: var(--accent1-color);
 }
 
-.accent2 {
-    background-color: var(--accent2-color);
+.light-squares {
+    background-color: var(--light-squares);
+}
+
+.dark-squares {
+    background-color: var(--dark-squares);
+}
+
+.main-text {
+    background-color: var(--main-text);
+}
+
+.second-text {
+    background-color: var(--second-text);
+}
+
+.piece-outline {
+    background-color: var(--piece-outline);
+}
+
+.selected-piece {
+    background-color: var(--selected-piece);
+}
+
+.possible-moves {
+    background-color: var(--possible-moves);
 }
 
 p.colored {
@@ -211,3 +234,4 @@ nav a:hover {
     border-top: 1px solid;
     border-right: 1px solid;
 }
+

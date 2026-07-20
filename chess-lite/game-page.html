@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+    <meta name="author" content="Blake Kenworthy">
+    <meta name="description" content="Chess Lite A site to play chess against a moderately strong chess bot">
+    <link href="styles/style.css" rel="stylesheet">
+    <script defer src="javascript/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo-attempt3.png" alt="chess-lite logo">
+        <h1>Chess Lite</h1>
+        <nav>
+            <h2><a href="./index.html">Home Page</a></h2>
+            <h2><a href="#">Play Game</a></h2>
+            <h2><a href="#">Search Page</a></h2>
+        </nav>
+    </header>
+
+
+    <main>
+            <aside>
+                <button id="start-game" aria-label="start-game">
+                    <h3>Start-Game</h3>
+                </button>
+                <button id="end-game" aria-label="end-game">
+                    <h3>End-Game</h3>
+                </button>
+                <article id="popup">
+                    <button id="white-pieces" aria-label="choose-white">
+                        <h4>White Pieces</h4>
+                    </button>
+                    <button id="black-pieces" aria-label="choose-black">
+                        <h4>Black Pieces</h4>
+                    </button>
+                </article>
+            </aside>
+        <div id="board-wrapper">
+        <table id="chess-board">
+            <tr class="row-1">              
+                <td class="black-square column-a" id="sq-0"></td>
+                <td class="white-square column-b" id="sq-1"></td>
+                <td class="black-square column-c" id="sq-2"></td>
+                <td class="white-square column-d" id="sq-3"></td>
+                <td class="black-square column-e" id="sq-4"></td>
+                <td class="white-square column-f" id="sq-5"></td>
+                <td class="black-square column-g" id="sq-6"></td>
+                <td class="white-square column-h" id="sq-7"></td>
+            </tr>
+            <tr class="row-2">
+                <td class="white-square column-a" id="sq-8"></td>
+                <td class="black-square column-b" id="sq-9"></td>
+                <td class="white-square column-c" id="sq-10"></td>
+                <td class="black-square column-d" id="sq-11"></td>
+                <td class="white-square column-e" id="sq-12"></td>
+                <td class="black-square column-f" id="sq-13"></td>
+                <td class="white-square column-g" id="sq-14"></td>
+                <td class="black-square column-h" id="sq-15"></td>
+            </tr>
+            <tr class="row-3">
+                <td class="black-square column-a" id="sq-16"></td>
+                <td class="white-square column-b" id="sq-17"></td>
+                <td class="black-square column-c" id="sq-18"></td>
+                <td class="white-square column-d" id="sq-19"></td>
+                <td class="black-square column-e" id="sq-20"></td>
+                <td class="white-square column-f" id="sq-21"></td>
+                <td class="black-square column-g" id="sq-22"></td>
+                <td class="white-square column-h" id="sq-23"></td>
+            </tr>
+            <tr class="row-4">
+                <td class="white-square column-a" id="sq-24"></td>
+                <td class="black-square column-b" id="sq-25"></td>
+                <td class="white-square column-c" id="sq-26"></td>
+                <td class="black-square column-d" id="sq-27"></td>
+                <td class="white-square column-e" id="sq-28"></td>
+                <td class="black-square column-f" id="sq-29"></td>
+                <td class="white-square column-g" id="sq-30"></td>
+                <td class="black-square column-h" id="sq-31"></td>
+            </tr>
+            <tr class="row-5">
+                <td class="black-square column-a" id="sq-32"></td>
+                <td class="white-square column-b" id="sq-33"></td>
+                <td class="black-square column-c" id="sq-34"></td>
+                <td class="white-square column-d" id="sq-35"></td>
+                <td class="black-square column-e" id="sq-36"></td>
+                <td class="white-square column-f" id="sq-37"></td>
+                <td class="black-square column-g" id="sq-38"></td>
+                <td class="white-square column-h" id="sq-39"></td>
+            </tr>
+            <tr class="row-6">
+                <td class="white-square column-a" id="sq-40"></td>
+                <td class="black-square column-b" id="sq-41"></td>
+                <td class="white-square column-c" id="sq-42"></td>
+                <td class="black-square column-d" id="sq-43"></td>
+                <td class="white-square column-e" id="sq-44"></td>
+                <td class="black-square column-f" id="sq-45"></td>
+                <td class="white-square column-g" id="sq-46"></td>
+                <td class="black-square column-h" id="sq-47"></td>
+            </tr>
+            <tr class="row-7">
+                <td class="black-square column-a" id="sq-48"></td>
+                <td class="white-square column-b" id="sq-49"></td>
+                <td class="black-square column-c" id="sq-50"></td>
+                <td class="white-square column-d" id="sq-51"></td>
+                <td class="black-square column-e" id="sq-52"></td>
+                <td class="white-square column-f" id="sq-53"></td>
+                <td class="black-square column-g" id="sq-54"></td>
+                <td class="white-square column-h" id="sq-55"></td>
+            </tr>
+            <tr class="row-8">
+                <td class="white-square column-a" id="sq-56"></td>
+                <td class="black-square column-b" id="sq-57"></td>
+                <td class="white-square column-c" id="sq-58"></td>
+                <td class="black-square column-d" id="sq-59"></td>
+                <td class="white-square column-e" id="sq-60"></td>
+                <td class="black-square column-f" id="sq-61"></td>
+                <td class="white-square column-g" id="sq-62"></td>
+                <td class="black-square column-h" id="sq-63"></td>
+            </tr>
+        </table>
+        </div>
+    </main>
+
+    <footer>
+        <h4>Blake Kenworthy circa 2026</h4>
+    </footer>
+</body>
+
+</html>
+

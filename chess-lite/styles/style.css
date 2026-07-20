@@ -1,0 +1,381 @@
+/* =========================
+   Google Fonts (optimized)
+   ========================= */
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* =========================
+   CSS Variables (Site Plan Palette)
+   ========================= */
+:root {
+    /* Main Palette */
+    --primary: #16191B;
+    --secondary: #92ECBA;
+    --accent1: #4E6172;
+
+    /* Chessboard */
+    --light-squares: #E8E8E8;
+    --dark-squares: #3A3D40;
+
+    /* Text */
+    --main-text: #F5F6F7;
+    --second-text: #8A949E;
+
+    /* UI Elements */
+    --piece-outline: #002041;
+    --selected-piece: #5C758A;
+    --possible-moves: #70889B;
+
+    /* Backgrounds */
+    --paragraph-background-color: #4E6172;
+    --paragraph-color-on-color: #F5F6F7;
+    --nav-link-color: #F5F6F7;
+    --nav-hover-background-color: #5C758A;
+    --nav-hover-link-color: #FFFFFF;
+}
+
+/* =========================
+   Reset
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   Mobile-first base
+   ========================= */
+body {
+    font-family: "Montserrat", "Lato", sans-serif;
+    background: #F5F6F7;
+    color: #222;
+    line-height: 1.6;
+    padding: 1rem;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+}
+
+/* =========================
+   Header
+   ========================= */
+header {
+    background-color: var(--paragraph-background-color);
+    color: var(--paragraph-color-on-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+header img {
+    height: 64px;
+    width: auto;
+}
+
+header h1 {
+    font-family: "IM Fell French Canon SC", serif;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* =========================
+   Navigation
+   ========================= */
+nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--nav-hover-background-color);
+    color: var(--nav-hover-link-color);
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* =========================
+   Main Layout
+   ========================= */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex: 1;
+    /* Pushes footer down */
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+aside {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    /* Prevents sidebar from getting too wide */
+}
+
+aside button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent1);
+    color: var(--main-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 25px;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+aside button h3 {
+    color: var(--main-text) !important;
+}
+
+aside button:hover,
+aside button:focus {
+    background: var(--selected-piece);
+    transform: translateY(-2px);
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+aside button:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   Chess Board (Responsive & Centered)
+   ========================= */
+#chess-board {
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0 auto;
+    border: 3px solid var(--primary);
+    background-color: var(--primary);
+
+    /* Make it responsive */
+    width: 100%;
+    max-width: 1000px;
+    /* Limits size on huge screens */
+    aspect-ratio: 1 / 1;
+    /* Forces a perfect square */
+}
+
+#chess-board td {
+    width: 12.5%;
+    /* 100% / 8 columns */
+    height: 12.5%;
+    /* Matches width for square */
+    border: 1px solid var(--primary);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Square colors matching site plan */
+.white-square {
+    background-color: var(--light-squares);
+}
+
+.black-square {
+    background-color: var(--dark-squares);
+}
+
+/* Piece styling */
+#chess-board td img {
+    width: 85%;
+    /* Slightly smaller than cell to prevent clipping */
+    height: 85%;
+    object-fit: contain;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(1px 1px 1px var(--piece-outline));
+}
+
+/* Selected piece highlight */
+#chess-board td.selected {
+    background-color: var(--selected-piece) !important;
+    box-shadow: inset 0 0 0 4px var(--primary);
+}
+
+/* Possible moves highlight */
+#chess-board td.possible-moves {
+    background-color: var(--possible-moves) !important;
+    box-shadow: inset 0 0 0 4px var(--primary);
+}
+
+/* Flip the wrapper */
+.flipped-board {
+    transform: rotate(180deg);
+}
+
+/* Counter-rotate pieces */
+.flipped-board td  {
+    transform: rotate(180deg);
+}
+
+
+/* =========================
+   Popup/Selection Buttons
+   ========================= */
+#popup {
+    display: flex;
+    /* Always visible now */
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+
+#popup button {
+    background: var(--accent1);
+    color: var(--main-text);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+
+#popup button:hover {
+    background: var(--selected-piece);
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+    margin-top: auto;
+    /* Pushes footer to bottom if content is short */
+    text-align: center;
+    font-family: "IM Fell French Canon SC", serif;
+    font-size: 1.1rem;
+    color: var(--primary);
+    padding: 2rem 0;
+}
+
+/* =========================
+   Content Typography
+   ========================= */
+main h3 {
+    font-family: "IM Fell French Canon SC", serif;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+main p {
+    margin-bottom: 1rem;
+    margin: 1rem;
+    color: #333;
+}
+
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+   ========================= */
+
+/* Tablet (min-width: 600px) */
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    nav {
+        gap: 1rem;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    aside {
+        /* Sidebar stays on the left, but is constrained */
+        width: 280px;
+        flex-shrink: 0;
+    }
+
+    #chess-board {
+        max-width: 100%;
+        /* Allows board to grow in the main area */
+        border-width: 4px;
+    }
+}
+
+/* Desktop (min-width: 900px) */
+@media (min-width: 900px) {
+    body {
+        padding: 2rem;
+    }
+
+    header {
+        padding: 2rem 3rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    aside {
+        width: 300px;
+    }
+
+    #chess-board {
+        border-width: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+}
+
